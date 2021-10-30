@@ -89,7 +89,7 @@ const Arena = ({ characterNFT, setCharacterNFT }) => {
   return (
     <div className="arena-container">
       {/* Boss */}
-      {boss && (
+      {boss && showToast && (
         <div id="toast" className="show">
           <div id="desc">{`💥 ${boss.name} was hit for ${characterNFT.attackDamage}!`}</div>
         </div>
