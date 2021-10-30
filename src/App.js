@@ -104,24 +104,25 @@ const App = () => {
         <div className="header-container">
           <p className="header gradient-text">⚔️ Metaverse Slayer ⚔️</p>
           <p className="sub-text">Team up to protect the Metaverse!</p>
+
+          {!currentAccount && (
+            <div className="connect-wallet-container">
+              <img
+                src="https://64.media.tumblr.com/tumblr_mbia5vdmRd1r1mkubo1_500.gifv"
+                alt="Monty Python Gif"
+              />
+              <button
+                className="cta-button connect-wallet-button"
+                onClick={connectWalletAction}
+              >
+                Connect Wallet To Get Started
+              </button>
+            </div>
+          )}
           {isLoading ? (
             <LoadingIndicator />
           ) : (
             <>
-              {!currentAccount && (
-                <div className="connect-wallet-container">
-                  <img
-                    src="https://64.media.tumblr.com/tumblr_mbia5vdmRd1r1mkubo1_500.gifv"
-                    alt="Monty Python Gif"
-                  />
-                  <button
-                    className="cta-button connect-wallet-button"
-                    onClick={connectWalletAction}
-                  >
-                    Connect Wallet To Get Started
-                  </button>
-                </div>
-              )}
               {currentAccount && !characterNFT && (
                 <SelectCharacter setCharacterNFT={setCharacterNFT} />
               )}
